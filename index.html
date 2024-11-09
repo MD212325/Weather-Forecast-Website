@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Weather Forecast</h1>
         <input type="text" id="city" placeholder="Enter city name">
         <button id="getWeather">Get Weather</button>
+        <button id="toggleMap">Toggle Map</button> <!-- Toggle button for map -->
         <div id="weatherIconContainer">
             <img id="weatherIcon" alt="Weather Icon" style="display:none;">
         </div>
         <div id="weatherDetails"></div>
         <p id="stormStatus"></p>
     </div>
+    <div id="map" style="height: 400px; width: 100%; margin-top: 20px; display: none;"></div> <!-- Map initially hidden -->
     <script src="script.js"></script>
 </body>
 </html>
