@@ -1,6 +1,6 @@
 'use strict';
 
-const api_key = "a93c481fd72d1c430f4498c623e28a88";
+const api_key = 'b2fdc4135cb2f653b9075e99ab2b2ad9';
 
 /**
  * Fetch data from server
@@ -9,28 +9,28 @@ const api_key = "a93c481fd72d1c430f4498c623e28a88";
  */
 
 export const fetchData = function(URL, callback) {
-    fetch('${URL}&appid=${api_key}')
-    .then(res -> res.json())
-    .then(data -> callback(data));
+    fetch(`${URL}&appid=${api_key}`)
+    .then(res => res.json())
+    .then(data => callback(data));
 }
 
 export const url = {
     currentWeather(lat, lon) {
-        return 'https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric'
+        return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`
     },
     forecast(lat, lon) {
-        return 'https://api.openweathermap.org/data/2.5/forecast?${lat}&${lon}&units=metric'
+        return `https://api.openweathermap.org/data/2.5/forecast?${lat}&${lon}&units=metric`
     },
     airPollution(lat, lon) {
-        return 'http://api.openweathermap.org/data/2.5/air_pollution?${lat}&${lon}'
+        return `http://api.openweathermap.org/data/2.5/air_pollution?${lat}&${lon}`
     },
     reverseGeo(lat, lon) {
-        return 'http://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5'
+        return `http://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`
     },
     /**
      * @param {string} query Search query e.g.: "Manila", "Baras", "Tanay"
      */
     geo(query) {
-        return 'http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5'
+        return `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`
     }
 }
